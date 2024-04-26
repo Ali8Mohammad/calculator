@@ -5,7 +5,7 @@ for (item of btn)
 {
     item.addEventListener("click",(e)=>{
         btntext=e.target.innerText;
-        if(btntext=="x")
+        if(btntext=="X")
         {
             btntext="*"
         }
