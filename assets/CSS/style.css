@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
     display: flex;
     justify-content: center;
@@ -10,19 +11,35 @@ body {
     height: 100vh;
     background-color: white;
 }
+
 .container {
-    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: max-content;
     height: max-content;
     margin-top: 90px;
     padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(61, 60, 60);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.363);
+    border-radius: 30px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 15px 15px 10px rgba(17, 17, 17, 0.39);
 }
+
+.mode button {
+    padding: 20px 50px;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.display {
+    width: 65%;
+}
+
 .display #screen {
-    width: 97%;
-    height: 100%;
-    font-size: 40px;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 30px;
     outline: none;
     border: none;
     text-align: right;
@@ -30,70 +47,194 @@ body {
     background-color: white;
     border-radius: 10px;
 }
+
 .btns {
     width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin: 20px 0;
 }
-.btns .row button {
-    width: 50px;
-    height: 30px;
-    font-size: 16px;
+
+.btns .btn-all {
+    width: 95%;
+}
+
+.btns .btn-all div {
+    width: 100%;
+}
+
+.btn-i {
+    width: 5%;
+}
+
+.btn-i button {
+    height: 175px !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+}
+
+.eval {
+    background-color: rgb(255, 255, 255) !important;
+    color: blueviolet !important;
+    box-shadow: 4px 4px 30px rgba(137, 43, 226, 0.466) !important;
+}
+
+.eval:active {
+    background-color: blueviolet !important;
+    color: white !important;
+}
+
+.num {
+    background-color: white !important;
+    color: blueviolet !important;
+    box-shadow: 0 5px 10px blueviolet !important;
+}
+.num:active {
+    background-color: blueviolet !important;
+    color: white !important;
+}
+
+.btns div button {
+    padding: 3px 7px;
+    font-size: 20px;
     border: none;
     outline: none;
-    margin: 10px;
-    border-radius: 4px;
-
+    margin: 2px 10px; 
+    border-radius: 30%;
+    background-color: blueviolet;
+    color: white;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.322);
 }
-.row img {
+
+.btns div button:active {
+    background-color: white;
+    color: blueviolet;
+}
+
+.btns img {
     width: 15px;
 }
+
 @media screen and (max-width:319px) {
     .container {
         width: 200px;
     }
-    .btns .row button {
-        width: 20px;
-        height: 20px;
+
+    .btns button {
+        padding: 10px !important;
+        width: 25px !important;
+        font-size: 10px !important;
+        margin: 0px !important;
+    }
+
+    .mode button {
+        padding: 5px 10px;
+    }
+    .btn-i button {
+        height: 100px !important;
+        padding: 0px !important;
+        border-radius: 5px !important;
+        width: 25px !important;
+        margin: 0 3px !important;
+
+    }
+    .display #screen {
         font-size: 15px;
-        margin: 2px;
     }
 }
+
 @media screen and (min-width:320px) and (max-width:400px) {
     .container {
         width: 250px;
     }
-    .btns .row button {
-        width: 25px;
-        height: 25px;
-        font-size: 15px;
-        margin: 3px;
+    
+    .btns button {
+        padding: 10px !important;
+        width: 40px !important;
+        font-size: 10px !important;
+        margin: 0px !important;
     }
-}
-@media screen and (min-width:401px) and (max-width:600px) {
-    .container {
-        width: 300px;
-        
+    .display #screen {
+        font-size: 20px;
     }
-    .btns {
-        height: 100%;
+    .mode button {
+        padding: 10px 20px;
     }
-    .btns .row button {
-        width: 30px;
-        height: 20px;
-        font-size: 16px;
-        border: none;
-        outline: none;
-        margin: 10px 5px;
-        border-radius: 4px;
+    .btn-i button {
+        height: 75px !important;
+        padding: 0px !important;
+        border-radius: 5px !important;
+        width: 35px !important;
+        margin: 0 3px !important;
+
+    }
     
 }
-}
-@media screen and (min-width:601px) and (max-width:1025px) {
+
+@media screen and (min-width:401px) and (max-width:600px) {
     .container {
-        width: 700px
+        width: 350px;
+        height: max-content;
+
     }
+    .btns {
+        justify-content: flex-start !important;
+    }
+    .display #screen {
+        font-size: 25px;
+    }
+    .btns button {
+        padding: 10px !important;
+        font-size: 15px !important;
+        width: 50px !important;
+        border: none;
+        outline: none;
+        margin: 5px 5px !important;
+        border-radius: 4px;
+
+    }
+
+    .mode button {
+        padding: 20px 30px;
+        border-radius: 20px;
+        margin: 10px 0;
+    }
+    .btn-i button {
+        height: 130px !important;
+        padding: 10px !important;
+        border-radius: 5px !important;
+    }
+}
+
+@media screen and (min-width:601px) and (max-width:800px) {
+    .container {
+        width: 500px
+    }
+    .btns button {
+        width: 60px !important;
+}
+.btn-i button {
+    height: 100px !important;
+}
+}
+@media screen and (min-width:801px) and (max-width:1000px) {
+    .container {
+        width: 600px;
+    }
+    .btns button {
+        width: 70px !important;
+}
+}
+
+@media screen and (min-width:1001px) {
+    .container {
+        width: 700px;
+    }
+    .btns button {
+        width: 70px !important;
+        padding: 20px !important;
+        font-size: 16px !important;
+}
 }
